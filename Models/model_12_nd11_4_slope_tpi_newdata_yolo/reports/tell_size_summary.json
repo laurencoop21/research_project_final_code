@@ -1,0 +1,22 @@
+{
+    "small_definition": "area <= 16718 m2",
+    "medium_definition": "16718 < area < 129300 m2",
+    "large_definition": "area >= 129300 m2",
+    "usable_tell_count": 1347,
+    "test_tell_count": 201,
+    "usable_area_quartiles_m2": {
+        "q25": 30049.54615769082,
+        "median": 84386.36398946488,
+        "q75": 146277.1721217319
+    },
+    "test_area_quartiles_m2": {
+        "q25": 17538.316036047356,
+        "median": 67498.79434667743,
+        "q75": 135679.914716891
+    },
+    "test_size_counts": {
+        "small": 49,
+        "medium": 101,
+        "large": 51
+    }
+}

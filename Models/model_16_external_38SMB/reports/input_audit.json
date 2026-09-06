@@ -1,0 +1,58 @@
+{
+    "deployment": "Model 16 external 38SMB",
+    "raster": {
+        "path": "/home3/gdyx28/Research Project/Research Project/iraq_tells_gis/38SMB_ND11_4_slope_TPI_uint8.tif",
+        "crs": "EPSG:32638",
+        "bands": 3,
+        "band_descriptions": [
+            "ND11_4",
+            "Slope",
+            "TPI"
+        ],
+        "shape": [
+            10000,
+            10000
+        ],
+        "pixel_size": [
+            10.0,
+            10.0
+        ],
+        "data_types": [
+            "uint8",
+            "uint8",
+            "uint8"
+        ],
+        "bounds": [
+            400000.0,
+            3600000.0,
+            500000.0,
+            3700000.0
+        ],
+        "area_km2": 10000.0
+    },
+    "external_aoi": {
+        "path": "/home3/gdyx28/Research Project/Research Project/iraq_tells_gis/38SMB_external_test_AOI.shp",
+        "original_crs": "EPSG:32638",
+        "audit_crs": "EPSG:32638",
+        "feature_count": 1,
+        "area_km2": 10000.0,
+        "invalid_geometries": 0,
+        "empty_geometries": 0,
+        "missing_geometries": 0,
+        "raster_overlap_fraction": 1.0,
+        "aoi_overlap_fraction": 1.0
+    },
+    "checks": {
+        "raster_has_3_bands": true,
+        "raster_is_epsg_32638": true,
+        "raster_has_10m_pixels": true,
+        "raster_is_10000_by_10000": true,
+        "all_bands_are_uint8": true,
+        "band_order_is_correct": true,
+        "no_invalid_aoi_geometries": true,
+        "no_empty_aoi_geometries": true,
+        "no_missing_aoi_geometries": true,
+        "aoi_matches_raster": true
+    },
+    "audit_passed": true
+}

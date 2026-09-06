@@ -1,0 +1,35 @@
+[
+  {
+    "band": "ND11_4",
+    "train_n_pixels": 68317560,
+    "test_n_pixels": 39846420,
+    "train_mean": 126.64021318969823,
+    "test_mean": 131.33495987845333,
+    "train_sd": 38.40570788199913,
+    "test_sd": 35.52858681086914,
+    "mean_difference_test_minus_train": 4.694746688755103,
+    "standardized_mean_difference": 0.12690175813065352
+  },
+  {
+    "band": "Slope",
+    "train_n_pixels": 68317560,
+    "test_n_pixels": 39846420,
+    "train_mean": 124.24735660934026,
+    "test_mean": 127.73868653695865,
+    "train_sd": 17.810771904311043,
+    "test_sd": 18.962537824940277,
+    "mean_difference_test_minus_train": 3.491329927618395,
+    "standardized_mean_difference": 0.18979084224621562
+  },
+  {
+    "band": "TPI",
+    "train_n_pixels": 68317560,
+    "test_n_pixels": 39846420,
+    "train_mean": 127.47206646431752,
+    "test_mean": 128.3729291364193,
+    "train_sd": 24.01427150618827,
+    "test_sd": 28.520703781239078,
+    "mean_difference_test_minus_train": 0.9008626721017663,
+    "standardized_mean_difference": 0.03417024582257466
+  }
+]

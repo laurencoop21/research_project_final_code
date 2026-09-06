@@ -1,0 +1,10 @@
+test_third,size_class,tells,detected,recall
+western third,large,24,15,0.625
+western third,medium,58,21,0.3620689655172414
+western third,small,32,0,0.0
+middle third,large,16,9,0.5625
+middle third,medium,19,4,0.21052631578947367
+middle third,small,10,0,0.0
+eastern third,large,11,9,0.8181818181818182
+eastern third,medium,24,12,0.5
+eastern third,small,7,0,0.0

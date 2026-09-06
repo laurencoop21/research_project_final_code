@@ -1,0 +1,9 @@
+{
+    "model": "Model 2: B11-B8-B4 YOLO with 256-pixel tiles",
+    "raster_path": "/home3/gdyx28/Research Project/Research Project/iraq_tells_gis/Iraq_11_8_4.tif",
+    "split_path": "/home3/gdyx28/Research Project/Research Project/iraq_tells_gis/Models/model_02_b11_b8_b4_yolo_256px/reports/geographic_split.gpkg",
+    "tile_size": 256,
+    "overlap": 64,
+    "stride": 192,
+    "minimum_visible_fraction": 0.5
+}

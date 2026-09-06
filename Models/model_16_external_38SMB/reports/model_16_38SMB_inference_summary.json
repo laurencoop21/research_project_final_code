@@ -1,0 +1,9 @@
+{
+    "model": "/home3/gdyx28/Research Project/Research Project/iraq_tells_gis/Models/model_16_external_38SMB/checkpoints/model_16_best.pt",
+    "image_directory": "/home3/gdyx28/Research Project/Research Project/iraq_tells_gis/Models/model_16_external_38SMB/tiles",
+    "image_size": 320,
+    "confidence_threshold": 0.1,
+    "prediction_iou": 0.7,
+    "tiles_processed": 1764,
+    "predictions": 5058
+}

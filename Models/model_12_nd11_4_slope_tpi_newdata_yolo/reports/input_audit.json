@@ -1,0 +1,53 @@
+{
+    "model": "Model 12: ND11_4-Slope-TPI YOLO with updated tell dataset",
+    "raster": {
+        "path": "/home3/gdyx28/Research Project/Research Project/iraq_tells_gis/Iraq_ND11_4_slope_TPI_uint8.tif",
+        "crs": "EPSG:32638",
+        "bands": 3,
+        "shape": [
+            10980,
+            10982
+        ],
+        "pixel_size": [
+            10.0,
+            10.0
+        ],
+        "data_types": [
+            "uint8",
+            "uint8",
+            "uint8"
+        ],
+        "bounds": [
+            499960.0,
+            3490210.0,
+            609780.0,
+            3600010.0
+        ]
+    },
+    "vectors": {
+        "tells_path": "/home3/gdyx28/Research Project/Research Project/iraq_tells_gis/tells_final_II.shp",
+        "aoi_path": "/home3/gdyx28/Research Project/Research Project/iraq_tells_gis/aoi_sentinel.shp",
+        "tell_count": 1362,
+        "aoi_count": 1,
+        "invalid_tells": 0,
+        "empty_tells": 0,
+        "missing_tells": 0,
+        "missing_fid": 0,
+        "tells_intersecting_raster": 1362,
+        "tells_inside_raster": 1357
+    },
+    "checks": {
+        "raster_has_3_bands": true,
+        "raster_is_epsg_32638": true,
+        "raster_has_10m_pixels": true,
+        "tell_count_is_1362": true,
+        "no_invalid_tells": true,
+        "no_empty_tells": true,
+        "no_missing_tells": true,
+        "all_tells_intersect_raster": true,
+        "fid_exists": true,
+        "no_missing_fid": true,
+        "fid_is_unique": true
+    },
+    "audit_passed": true
+}

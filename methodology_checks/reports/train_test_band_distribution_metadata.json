@@ -1,0 +1,15 @@
+{
+  "train_boundary_x": 562178.8103648677,
+  "validation_test_boundary_x": 573493.2756031455,
+  "raster_left": 499960.0,
+  "raster_right": 609780.0,
+  "raster_bottom": 3490210.0,
+  "raster_top": 3600010.0,
+  "pixel_size_x": 10.0,
+  "pixel_size_y": 10.0,
+  "train_first_column": 0,
+  "train_last_column": 6221,
+  "test_first_column": 7353,
+  "test_last_column": 10981,
+  "pixel_assignment": "Pixel centre x-coordinate"
+}

@@ -1,0 +1,4 @@
+split,tiles,positive_tiles,background_tiles,labelled_tells
+test,290,132,158,353
+train,464,372,92,1645
+val,87,68,19,355

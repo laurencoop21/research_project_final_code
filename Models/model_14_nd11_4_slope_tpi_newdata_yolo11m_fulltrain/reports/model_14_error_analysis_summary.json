@@ -1,0 +1,17 @@
+{
+    "confidence_threshold": 0.1,
+    "iou_threshold": 0.5,
+    "test_tiles": 290,
+    "ground_truth_instances": 353,
+    "predicted_instances": 452,
+    "true_positives": 123,
+    "false_positives": 329,
+    "false_negatives": 230,
+    "precision_at_selected_threshold": 0.2721238938053097,
+    "recall_at_selected_threshold": 0.34844192634560905,
+    "ground_truth_area_quartiles_pixels": {
+        "q1": 246.70426864025677,
+        "median": 989.430986833922,
+        "q3": 2044.9850514472982
+    }
+}

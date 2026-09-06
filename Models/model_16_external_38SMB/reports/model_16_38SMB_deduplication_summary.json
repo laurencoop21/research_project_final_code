@@ -1,0 +1,8 @@
+{
+    "raw_predictions": 5058,
+    "deduplication_iou_threshold": 0.7,
+    "review_candidates": 3888,
+    "suppressed_duplicates": 1170,
+    "candidates_with_multiple_source_detections": 1009,
+    "maximum_source_detection_count": 5
+}

@@ -1,0 +1,14 @@
+Dataset check summary
+---------------------
+split  images  labels  missing_labels  missing_images  assigned_tells  covered_tells  missing_tells  invalid_label_lines
+train     464     464               0               0             867            867              0                    0
+  val     116     116               0               0             179            179              0                    0
+ test     290     290               0               0             185            185              0                    0
+
+Every usable tell appears in at least one tile.
+
+Saved tell coverage to:
+/home3/gdyx28/Research Project/Research Project/iraq_tells_gis/Models/model_05_b4_slope_tpi_yolo/reports/tell_coverage.csv
+
+Saved sample box images to:
+/home3/gdyx28/Research Project/Research Project/iraq_tells_gis/Models/model_05_b4_slope_tpi_yolo/figures/label_checks

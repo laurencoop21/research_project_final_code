@@ -1,0 +1,14 @@
+{
+  "assessed_polygons": 779,
+  "clear_tells": 222,
+  "polygons_containing_known_site": 184,
+  "of_which_labelled_clear_tell": 169,
+  "agreement_where_site_present": 0.9184782608695652,
+  "polygons_without_known_site": 595,
+  "of_which_labelled_not_clear_tell": 542,
+  "agreement_where_no_site_present": 0.9109243697478991,
+  "clear_tells_without_known_site": 53,
+  "proportion_of_clear_tells_without_known_site": 0.23873873873873874,
+  "eamena_source_crs": "EPSG:4326",
+  "analysis_crs": "EPSG:32638"
+}

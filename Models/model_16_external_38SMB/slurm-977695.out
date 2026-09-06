@@ -1,0 +1,21 @@
+Starting Model 16 inference on external 38SMB tiles
+Running on: gpu10
+Python: /home3/gdyx28/iraq_tells_env/bin/python
+PyTorch: 2.13.0+cu130
+CUDA available: True
+GPU: NVIDIA A100 80GB PCIe MIG 1g.10gb
+Prediction device: 0
+Confidence threshold: 0.1
+Prediction IoU: 0.7
+Image size: 320
+
+Model 16 external inference
+---------------------------
+Tiles processed: 1764
+Predictions: 5058
+
+Saved tile-space predictions to:
+/home3/gdyx28/Research Project/Research Project/iraq_tells_gis/Models/model_16_external_38SMB/reports/model_16_38SMB_tile_predictions.csv
+
+Saved inference summary to:
+/home3/gdyx28/Research Project/Research Project/iraq_tells_gis/Models/model_16_external_38SMB/reports/model_16_38SMB_inference_summary.json

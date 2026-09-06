@@ -1,0 +1,5 @@
+pipeline,split,background_tiles,partial_tell_background_tiles,partial_tell_percent,cross_split_background_tiles,cross_split_percent,excluded_boundary_background_tiles,excluded_boundary_percent,any_unlabelled_tell_background_tiles,any_unlabelled_tell_percent,unexpected_labelable_background_tiles
+320,train,528,89,16.856060606060606,0,0.0,1,0.1893939393939394,90,17.045454545454547,0
+320,val,101,12,11.881188118811881,0,0.0,3,2.9702970297029703,14,13.861386138613861,0
+320,test,508,28,5.511811023622047,0,0.0,4,0.7874015748031497,32,6.299212598425197,0
+320,ALL,1137,129,11.345646437994723,0,0.0,8,0.7036059806508356,136,11.961301671064204,0

@@ -1,0 +1,14 @@
+{
+    "metrics/mAP50(B)": {
+        "best_epoch": 132,
+        "best_value": 0.40704,
+        "final_epoch": 150,
+        "final_value": 0.37673
+    },
+    "metrics/mAP50-95(B)": {
+        "best_epoch": 150,
+        "best_value": 0.20857,
+        "final_epoch": 150,
+        "final_value": 0.20857
+    }
+}

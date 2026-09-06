@@ -1,0 +1,5 @@
+size_class,test_tells,detected_tells,missed_tells,recall
+small,49,0,49,0.0
+medium,101,33,68,0.32673267326732675
+large,51,37,14,0.7254901960784313
+overall,201,70,131,0.3482587064676617

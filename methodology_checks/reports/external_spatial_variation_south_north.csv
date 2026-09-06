@@ -1,0 +1,4 @@
+band,known_sites,detected,recall,candidates_produced
+south,506,247,0.4881422924901186,1777
+middle,429,179,0.4172494172494173,1122
+north,310,103,0.33225806451612905,989

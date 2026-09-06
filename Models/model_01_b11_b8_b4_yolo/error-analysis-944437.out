@@ -1,0 +1,32 @@
+Starting Model 1 error analysis
+Running on: gpu11
+CUDA available: True
+GPU: NVIDIA A100 80GB PCIe MIG 1g.10gb
+Prediction device: 0
+Confidence threshold: 0.1
+IoU matching threshold: 0.5
+
+Model 1 test error analysis
+---------------------------
+Test tiles:       290
+Ground truths:    341
+Predictions:      218
+True positives:   21
+False positives:  197
+False negatives:  320
+Precision at conf 0.10: 0.0963
+Recall at conf 0.10:    0.0616
+
+Recall by ground-truth box size
+--------------------------------
+         size_group  labelled_instances  detected_instances  mean_width_pixels  mean_height_pixels  mean_area_pixels   recall
+ largest_25_percent                  85                   7          64.994840           65.406259       4876.852119 0.082353
+    medium_to_large                  85                  11          28.626534           29.574951        855.354843 0.129412
+    small_to_medium                  85                   3          18.901155           20.513141        386.299250 0.035294
+smallest_25_percent                  86                   0          10.216424           10.071457        109.335749 0.000000
+
+Saved summary to:
+/home3/gdyx28/Research Project/Research Project/iraq_tells_gis/Models/model_01_b11_b8_b4_yolo/reports/model_01_error_analysis_summary.json
+
+Saved annotated examples to:
+/home3/gdyx28/Research Project/Research Project/iraq_tells_gis/Models/model_01_b11_b8_b4_yolo/figures/test_error_analysis

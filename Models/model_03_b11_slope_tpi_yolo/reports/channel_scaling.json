@@ -1,0 +1,67 @@
+{
+  "reference_raster": "/home3/gdyx28/Research Project/Research Project/iraq_tells_gis/Iraq_11_8_4.tif",
+  "output_raster": "/home3/gdyx28/Research Project/Research Project/iraq_tells_gis/Iraq_B11_slope_TPI_uint8.tif",
+  "channel_order": {
+    "band_1": "B11",
+    "band_2": "Slope",
+    "band_3": "TPI"
+  },
+  "scaling_method": "Per-channel z-score standardisation, clipping to +/-3 standard deviations, then linear scaling to 0-255",
+  "mean_value_maps_to": 127.5,
+  "channels": {
+    "B11": {
+      "source_path": "/home3/gdyx28/Research Project/Research Project/iraq_tells_gis/iraq_b11_20m.tif",
+      "original_mean": 2983.97314453125,
+      "original_standard_deviation": 824.655517578125,
+      "original_minimum": 57.0625,
+      "original_maximum": 15324.78125,
+      "clip_standard_deviations": 3.0,
+      "z_minimum_before_clipping": -3.549252510070801,
+      "z_maximum_before_clipping": 14.964804649353027,
+      "mean_value_maps_to": 127.5,
+      "missing_value_maps_to": 128,
+      "valid_pixels": 120549420,
+      "missing_pixels": 32940,
+      "scaled_minimum": 0,
+      "scaled_maximum": 255,
+      "scaled_mean": 127.6989574732089,
+      "scaled_standard_deviation": 41.78812557271398
+    },
+    "Slope": {
+      "source_path": "/home3/gdyx28/Research Project/Research Project/iraq_tells_gis/iraq_fabdem_slope_30m.tif",
+      "original_mean": 0.10602572560310364,
+      "original_standard_deviation": 0.2970316410064697,
+      "original_minimum": 0.0,
+      "original_maximum": 13.794988632202148,
+      "clip_standard_deviations": 3.0,
+      "z_minimum_before_clipping": -0.35695093870162964,
+      "z_maximum_before_clipping": 46.085872650146484,
+      "mean_value_maps_to": 127.5,
+      "missing_value_maps_to": 128,
+      "valid_pixels": 120428676,
+      "missing_pixels": 153684,
+      "scaled_minimum": 112,
+      "scaled_maximum": 255,
+      "scaled_mean": 125.45322344156637,
+      "scaled_standard_deviation": 18.374876082365972
+    },
+    "TPI": {
+      "source_path": "/home3/gdyx28/Research Project/Research Project/iraq_tells_gis/iraq_fabdem_tpi_30m.tif",
+      "original_mean": -4.322262975620106e-05,
+      "original_standard_deviation": 0.2583751082420349,
+      "original_minimum": -6.941774368286133,
+      "original_maximum": 10.853469848632812,
+      "clip_standard_deviations": 3.0,
+      "z_minimum_before_clipping": -26.866872787475586,
+      "z_maximum_before_clipping": 42.006805419921875,
+      "mean_value_maps_to": 127.5,
+      "missing_value_maps_to": 128,
+      "valid_pixels": 120549420,
+      "missing_pixels": 32940,
+      "scaled_minimum": 0,
+      "scaled_maximum": 255,
+      "scaled_mean": 127.80897625222917,
+      "scaled_standard_deviation": 25.77931675983465
+    }
+  }
+}

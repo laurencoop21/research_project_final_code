@@ -1,0 +1,34 @@
+Starting Model 17 error analysis
+Running on: gpu11
+Python: /home3/gdyx28/iraq_tells_env/bin/python
+PyTorch: 2.13.0+cu130
+CUDA available: True
+GPU: NVIDIA A100 80GB PCIe MIG 1g.10gb
+Prediction device: 0
+Confidence threshold: 0.1
+IoU matching threshold: 0.5
+
+Model 17 test error analysis
+---------------------------
+Test tiles:       290
+Ground truths:    353
+Predictions:      662
+True positives:   118
+False positives:  544
+False negatives:  235
+Precision at conf 0.10: 0.1782
+Recall at conf 0.10:    0.3343
+
+Recall by ground-truth box size
+--------------------------------
+         size_group  labelled_instances  detected_instances  mean_width_pixels  mean_height_pixels  mean_area_pixels   recall
+    small_to_medium                  88                  20          22.859293           25.995951        601.906727 0.227273
+    medium_to_large                  88                  46          38.901353           38.198895       1473.214757 0.522727
+smallest_25_percent                  89                   0          10.878061           11.175125        125.836682 0.000000
+ largest_25_percent                  88                  52          66.349708           66.246813       4774.713974 0.590909
+
+Saved summary to:
+/home3/gdyx28/Research Project/Research Project/iraq_tells_gis/Models/model_17_nd11_4_slope_tpi_newdata_yolo11m_512_200epochs/reports/model_17_error_analysis_summary.json
+
+Saved annotated examples to:
+/home3/gdyx28/Research Project/Research Project/iraq_tells_gis/Models/model_17_nd11_4_slope_tpi_newdata_yolo11m_512_200epochs/figures/test_error_analysis

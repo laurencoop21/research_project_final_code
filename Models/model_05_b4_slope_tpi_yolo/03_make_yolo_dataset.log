@@ -1,0 +1,22 @@
+
+Creating train tiles...
+Saved 464 train tiles.
+
+Creating val tiles...
+Saved 116 val tiles.
+
+Creating test tiles...
+Saved 290 test tiles.
+
+Tile summary
+------------
+split  tiles  positive_tiles  background_tiles  labelled_tells
+ test    290             143               147             341
+train    464             384                80            1559
+  val    116              91                25             363
+
+Saved tile index to:
+/home3/gdyx28/Research Project/Research Project/iraq_tells_gis/Models/model_05_b4_slope_tpi_yolo/reports/tile_index.csv
+
+Saved dataset settings to:
+/home3/gdyx28/Research Project/Research Project/iraq_tells_gis/Models/model_05_b4_slope_tpi_yolo/dataset/dataset.yaml

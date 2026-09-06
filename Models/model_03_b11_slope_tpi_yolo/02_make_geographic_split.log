@@ -1,0 +1,18 @@
+Geographic split boundaries
+---------------------------
+Train/validation boundary: 560561.9997307117
+Validation/test boundary: 573500.2316923346
+
+Tell counts
+-----------
+           split  tell_count
+           train         867
+            test         185
+             val         179
+exclude_boundary          11
+
+Saved geographic split to:
+/home3/gdyx28/Research Project/Research Project/iraq_tells_gis/Models/model_03_b11_slope_tpi_yolo/reports/geographic_split.gpkg
+
+Saved split summary to:
+/home3/gdyx28/Research Project/Research Project/iraq_tells_gis/Models/model_03_b11_slope_tpi_yolo/reports/geographic_split_summary.csv

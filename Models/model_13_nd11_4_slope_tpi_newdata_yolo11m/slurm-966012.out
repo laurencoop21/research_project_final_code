@@ -1,0 +1,8 @@
+Starting Model 13 YOLO11m ND11-4 + Slope + TPI
+Running on: gpu10
+Python: /home3/gdyx28/iraq_tells_env/bin/python
+PyTorch: 2.13.0+cu130
+CUDA available: True
+GPU: NVIDIA A100 80GB PCIe MIG 1g.10gb
+New https://pypi.org/project/ultralytics/8.4.123 available 😃 Update with 'pip install -U ultralytics'
+Ultralytics 8.4.115 🚀 Python-3.11.9 torch-2.13.0+cu130 CUDA:0 (NVIDIA A100 80GB PCIe MIG 1g.10gb, 9728MiB)

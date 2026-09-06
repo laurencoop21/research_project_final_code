@@ -1,0 +1,42 @@
+All required raster files were found.
+
+Reference grid
+--------------
+CRS: EPSG:32638
+Shape: (10980, 10982)
+Resolution: (10.0, 10.0)
+Bounds: BoundingBox(left=499960.0, bottom=3490210.0, right=609780.0, top=3600010.0)
+
+Preparing B4...
+Written as output band 1.
+Original mean: 1973.538696
+Original standard deviation: 754.839050
+Scaled valid-pixel mean and standard deviation: 127.50 42.49
+
+Preparing Slope...
+Written as output band 2.
+Original mean: 0.106026
+Original standard deviation: 0.297032
+Scaled valid-pixel mean and standard deviation: 125.45 18.37
+
+Preparing TPI...
+Written as output band 3.
+Original mean: -0.000043
+Original standard deviation: 0.258375
+Scaled valid-pixel mean and standard deviation: 127.81 25.78
+
+Completed composite
+-------------------
+Path: /home3/gdyx28/Research Project/Research Project/iraq_tells_gis/Iraq_B4_slope_TPI_uint8.tif
+CRS: EPSG:32638
+Bands: 3
+Band descriptions: ('B4', 'Slope', 'TPI')
+Shape: (10980, 10982)
+Resolution: (10.0, 10.0)
+Data types: ('uint8', 'uint8', 'uint8')
+Bounds: BoundingBox(left=499960.0, bottom=3490210.0, right=609780.0, top=3600010.0)
+
+Saved scaling report to:
+/home3/gdyx28/Research Project/Research Project/iraq_tells_gis/Models/model_05_b4_slope_tpi_yolo/reports/channel_scaling.json
+
+B4-Slope-TPI raster preparation is complete.

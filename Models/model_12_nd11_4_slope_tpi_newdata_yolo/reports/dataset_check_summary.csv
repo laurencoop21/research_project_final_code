@@ -1,0 +1,4 @@
+split,images,labels,missing_labels,missing_images,assigned_tells,covered_tells,missing_tells,invalid_label_lines
+train,464,464,0,0,949,949,0,0
+val,87,87,0,0,197,197,0,0
+test,290,290,0,0,201,201,0,0

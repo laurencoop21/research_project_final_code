@@ -1,0 +1,509 @@
+
+================ HISTORY 34 ================
+	 python - <<'PY'
+import geopandas as gpd
+
+gdf = gpd.read_file("tells_final_II.shp")
+
+print("Feature count:", len(gdf))
+print("CRS:", gdf.crs)
+print("Geometry types:")
+print(gdf.geom_type.value_counts())
+print("Invalid geometries:", (~gdf.geometry.is_valid).sum())
+print("Empty geometries:", gdf.geometry.is_empty.sum())
+print("Bounds:", gdf.total_bounds)
+PY
+
+
+================ HISTORY 38 ================
+	 python - <<'PY'
+import geopandas as gpd
+
+gdf = gpd.read_file("tells_final_II.shp")
+
+print("Feature count:", len(gdf))
+print("CRS:", gdf.crs)
+print("Geometry types:")
+print(gdf.geom_type.value_counts())
+print("Invalid geometries:", (~gdf.geometry.is_valid).sum())
+print("Empty geometries:", gdf.geometry.is_empty.sum())
+print("Bounds:", gdf.total_bounds)
+PY
+
+
+================ HISTORY 44 ================
+	 python - <<'PY'
+from pathlib import Path
+import rasterio
+
+MODEL_DIR = Path.cwd()
+PROJECT_DIR = MODEL_DIR.parent.parent
+raster_path = PROJECT_DIR / "Iraq_ND11_4_slope_TPI_uint8.tif"
+
+print("Raster:", raster_path)
+print("Exists:", raster_path.exists())
+
+with rasterio.open(raster_path) as src:
+    print("CRS:", src.crs)
+    print("Bands:", src.count)
+    print("Band descriptions:", src.descriptions)
+    print("Shape:", (src.height, src.width))
+    print("Resolution:", src.res)
+    print("Data types:", src.dtypes)
+    print("Bounds:", src.bounds)
+PY
+
+
+================ HISTORY 52 ================
+	 python - <<'PY'
+import geopandas as gpd
+from pathlib import Path
+
+PROJECT_DIR = Path.cwd().parent.parent
+tells = gpd.read_file(PROJECT_DIR / "tells_final_II.shp")
+
+print("Columns:")
+print(list(tells.columns))
+
+print("\nFirst 5 rows without geometry:")
+print(tells.drop(columns="geometry").head())
+
+print("\npolygon_id exists:", "polygon_id" in tells.columns)
+
+if "polygon_id" in tells.columns:
+    print("polygon_id unique:", tells["polygon_id"].is_unique)
+    print("polygon_id missing:", tells["polygon_id"].isna().sum())
+PY
+
+
+================ HISTORY 53 ================
+	 python - <<'PY'
+import geopandas as gpd
+from pathlib import Path
+
+PROJECT_DIR = Path.cwd().parent.parent
+tells = gpd.read_file(PROJECT_DIR / "tells_final_II.shp")
+
+print("Tell count:", len(tells))
+print("fid missing:", tells["fid"].isna().sum())
+print("fid unique:", tells["fid"].is_unique)
+print("fid duplicated:", tells["fid"].duplicated().sum())
+print("fid minimum:", tells["fid"].min())
+print("fid maximum:", tells["fid"].max())
+PY
+
+
+================ HISTORY 92 ================
+	 python - <<'PY'
+from pathlib import Path
+
+path = Path("02_make_geographic_split.py")
+text = path.read_text()
+
+old = '''tells = gpd.read_file(tells_path)
+
+if tells.crs != raster_crs:
+    tells = tells.to_crs(raster_crs)
+'''
+
+new = '''tells = gpd.read_file(tells_path)
+
+# The updated tell dataset uses "fid" as its unique source identifier.
+
+# Rename it to polygon_id so it can be safely written to GeoPackage
+
+# and remain compatible with the existing YOLO dataset workflow.
+
+if "fid" not in tells.columns:
+    raise ValueError("Expected unique fid field was not found.")
+
+tells = tells.rename(columns={"fid": "polygon_id"})
+tells["polygon_id"] = tells["polygon_id"].astype(int)
+
+if tells.crs != raster_crs:
+    tells = tells.to_crs(raster_crs)
+'''
+
+if old not in text:
+    raise SystemExit("Expected code block not found; file was not changed.")
+
+path.write_text(text.replace(old, new))
+
+print("Updated 02_make_geographic_split.py")
+PY
+
+
+================ HISTORY 192 ================
+	 python - <<'PY'
+import geopandas as gpd
+
+tells = gpd.read_file(
+    "reports/geographic_split.gpkg",
+    layer="tells_with_split",
+)
+
+usable = tells[tells["split"].isin(["train", "val", "test"])].copy()
+test = tells[tells["split"] == "test"].copy()
+
+usable["area_m2"] = usable.geometry.area
+test["area_m2"] = test.geometry.area
+
+print("UPDATED USABLE DATASET AREA QUARTILES")
+print("-------------------------------------")
+print(usable["area_m2"].quantile([0.25, 0.50, 0.75]))
+
+print("\nTEST SET AREA QUARTILES")
+print("-----------------------")
+print(test["area_m2"].quantile([0.25, 0.50, 0.75]))
+
+print("\nTEST COUNTS USING OLD PROJECT THRESHOLDS")
+print("----------------------------------------")
+small = (test["area_m2"] <= 16718).sum()
+medium = ((test["area_m2"] > 16718) & (test["area_m2"] < 129300)).sum()
+large = (test["area_m2"] >= 129300).sum()
+
+print("Small:", small)
+print("Medium:", medium)
+print("Large:", large)
+print("Total:", small + medium + large)
+PY
+
+
+================ HISTORY 208 ================
+	 python - <<'PY'
+import rasterio
+from pathlib import Path
+
+files = [
+    "elevation_utm.tif",
+    "iraq_fabdem_slope_30m.tif",
+    "iraq_fabdem_tpi_30m.tif",
+    "Iraq_ND11_4_slope_TPI_uint8.tif",
+]
+
+for name in files:
+    path = Path(name)
+    print(f"\n{name}")
+    print("-" * len(name))
+
+    if not path.exists():
+        print("NOT FOUND")
+        continue
+
+    with rasterio.open(path) as src:
+        print("CRS:", src.crs)
+        print("Resolution:", src.res)
+        print("Shape:", (src.height, src.width))
+        print("Bounds:", src.bounds)
+        print("dtype:", src.dtypes)
+PY
+
+
+================ HISTORY 212 ================
+	 python - <<'PY'
+import rasterio
+import numpy as np
+
+path = "Iraq_ND11_4_slope_TPI_uint8.tif"
+
+# Approximate location you were just viewing in QGIS
+
+x = 553999
+y = 3545614
+
+with rasterio.open(path) as src:
+    row, col = src.index(x, y)
+
+    # Print a small patch around that location
+
+    tpi = src.read(
+        3,
+        window=rasterio.windows.Window(
+            col - 6,
+            row - 6,
+            12,
+            12,
+        ),
+    )
+
+print("12 x 12 TPI values around the QGIS location")
+print("--------------------------------------------")
+print(tpi)
+
+print("\nUnique values in this patch:", len(np.unique(tpi)))
+
+# --------------------------------------------------
+
+# Check a larger patch for suspicious constant 3x3 blocks
+
+# --------------------------------------------------
+
+
+with rasterio.open(path) as src:
+    row, col = src.index(x, y)
+
+    large = src.read(
+        3,
+        window=rasterio.windows.Window(
+            col - 75,
+            row - 75,
+            150,
+            150,
+        ),
+    )
+
+print("\nConstant 3x3 block check")
+print("------------------------")
+
+for row_offset in range(3):
+    for col_offset in range(3):
+
+        total = 0
+        constant = 0
+
+        for r in range(row_offset, large.shape[0] - 2, 3):
+            for c in range(col_offset, large.shape[1] - 2, 3):
+
+                block = large[r:r+3, c:c+3]
+
+                if block.shape != (3, 3):
+                    continue
+
+                total += 1
+
+                if np.all(block == block[0, 0]):
+                    constant += 1
+
+        percentage = 100 * constant / total if total else 0
+
+        print(
+            f"offset ({row_offset},{col_offset}): "
+            f"{constant}/{total} constant 3x3 blocks "
+            f"({percentage:.1f}%)"
+        )
+PY
+
+
+================ HISTORY 355 ================
+	 python - <<'PY'
+import pandas as pd
+import geopandas as gpd
+
+model = "../model_12_nd11_4_slope_tpi_newdata_yolo"
+
+det = pd.read_csv(
+    model + "/reports/model_12_unique_tell_detection.csv"
+)
+
+print("UNIQUE-TELL DETECTION COLUMNS")
+print(det.columns.tolist())
+print()
+print(det.head())
+print()
+print("Rows:", len(det))
+
+gpkg = model + "/reports/geographic_split.gpkg"
+
+tells = gpd.read_file(gpkg, layer="tells_with_split")
+
+print("\nSPLIT TELL COLUMNS")
+print(tells.columns.tolist())
+print()
+print(tells.head())
+print()
+print(tells["split"].value_counts())
+PY
+
+
+================ HISTORY 356 ================
+	 python - <<'PY'
+import pandas as pd
+import geopandas as gpd
+import numpy as np
+
+model = "../model_12_nd11_4_slope_tpi_newdata_yolo"
+
+# --------------------------------------------------
+
+# Load Model 12 unique-tell detections
+
+# --------------------------------------------------
+
+
+det = pd.read_csv(
+    model + "/reports/model_12_unique_tell_detection.csv"
+)
+
+# --------------------------------------------------
+
+# Load geographic split
+
+# --------------------------------------------------
+
+
+gpkg = model + "/reports/geographic_split.gpkg"
+
+tells = gpd.read_file(
+    gpkg,
+    layer="tells_with_split",
+)
+
+regions = gpd.read_file(
+    gpkg,
+    layer="split_regions",
+)
+
+test_tells = tells[tells["split"] == "test"].copy()
+
+# --------------------------------------------------
+
+# Merge detections with test tell locations
+
+# --------------------------------------------------
+
+
+df = test_tells[
+    ["polygon_id", "centroid_x"]
+].merge(
+    det,
+    on="polygon_id",
+    how="left",
+    validate="one_to_one",
+)
+
+print("Matched test tells:", len(df))
+print("Missing detection records:", df["detected"].isna().sum())
+
+assert len(df) == 201
+assert df["detected"].isna().sum() == 0
+
+# --------------------------------------------------
+
+# Get exact western/eastern bounds of test region
+
+# --------------------------------------------------
+
+
+test_region = regions[
+    regions["split"] == "test"
+].geometry.iloc[0]
+
+west = test_region.bounds[0]
+east = test_region.bounds[2]
+width = east - west
+
+df["distance_from_west_km"] = (
+    df["centroid_x"] - west
+) / 1000
+
+df["relative_east_position"] = (
+    df["centroid_x"] - west
+) / width
+
+# --------------------------------------------------
+
+# Divide test strip into equal-width thirds
+
+# --------------------------------------------------
+
+
+df["test_third"] = pd.cut(
+    df["relative_east_position"],
+    bins=[-np.inf, 1/3, 2/3, np.inf],
+    labels=[
+        "western third",
+        "middle third",
+        "eastern third",
+    ],
+)
+
+# --------------------------------------------------
+
+# Overall recall by geographic third
+
+# --------------------------------------------------
+
+
+summary = (
+    df.groupby("test_third", observed=False)
+    .agg(
+        tells=("polygon_id", "count"),
+        detected=("detected", "sum"),
+    )
+)
+
+summary["recall"] = (
+    summary["detected"] / summary["tells"]
+)
+
+print("\nMODEL 12 UNIQUE-TELL RECALL BY TEST-REGION THIRD")
+print("------------------------------------------------")
+print(summary)
+
+# --------------------------------------------------
+
+# Tell size distribution in each third
+
+# --------------------------------------------------
+
+
+size_counts = pd.crosstab(
+    df["test_third"],
+    df["size_class"],
+)
+
+print("\nTELL SIZE COUNTS BY THIRD")
+print("-------------------------")
+print(size_counts)
+
+# --------------------------------------------------
+
+# Recall by size within each geographic third
+
+# --------------------------------------------------
+
+
+size_recall = (
+    df.groupby(
+        ["test_third", "size_class"],
+        observed=False,
+    )
+    .agg(
+        tells=("polygon_id", "count"),
+        detected=("detected", "sum"),
+    )
+)
+
+size_recall["recall"] = np.where(
+    size_recall["tells"] > 0,
+    size_recall["detected"] / size_recall["tells"],
+    np.nan,
+)
+
+print("\nRECALL BY THIRD AND SIZE CLASS")
+print("------------------------------")
+print(size_recall)
+
+# --------------------------------------------------
+
+# Compare locations of detected vs missed tells
+
+# --------------------------------------------------
+
+
+location_summary = (
+    df.groupby("detected")
+    .agg(
+        tells=("polygon_id", "count"),
+        mean_distance_km=("distance_from_west_km", "mean"),
+        median_distance_km=("distance_from_west_km", "median"),
+        mean_relative_position=("relative_east_position", "mean"),
+    )
+)
+
+print("\nDETECTED VS MISSED LOCATION")
+print("---------------------------")
+print(location_summary)
+
+PY
+

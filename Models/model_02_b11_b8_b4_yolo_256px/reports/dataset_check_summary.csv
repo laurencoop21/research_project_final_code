@@ -1,0 +1,4 @@
+split,tile_index_rows,images,labels,missing_labels,missing_images,images_missing_from_dataset,labels_missing_from_dataset,extra_images,extra_labels,invalid_image_sizes,total_label_lines,invalid_label_lines,label_count_mismatches,assigned_tells,covered_tells,missing_tells
+train,1824,1824,1824,0,0,0,0,0,0,0,1542,99,0,867,867,0
+val,399,399,399,0,0,0,0,0,0,0,315,15,0,179,179,0
+test,1083,1083,1083,0,0,0,0,0,0,0,332,23,0,185,185,0

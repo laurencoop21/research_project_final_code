@@ -1,0 +1,10 @@
+{
+    "check_location_x": 553999,
+    "check_location_y": 3545614,
+    "final_raster": "Iraq_ND11_4_slope_TPI_uint8.tif",
+    "band_checked": 3,
+    "band_meaning": "TPI",
+    "patch_unique_values": 7,
+    "minimum_constant_block_percentage": 7.7051228654727195,
+    "maximum_constant_block_percentage": 9.428571428571429
+}

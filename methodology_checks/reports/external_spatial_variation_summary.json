@@ -1,0 +1,17 @@
+{
+  "eamena_sites_total": 1544,
+  "eamena_sites_within_aoi": 1245,
+  "eamena_sites_outside_aoi": 299,
+  "detected_within_aoi": 529,
+  "recall_within_aoi": 0.4248995983935743,
+  "detected_outside_aoi": 0,
+  "candidates_total": 3888,
+  "grid_cells_per_side": 10,
+  "grid_correlation_sites_vs_candidates": 0.19879565635369226,
+  "aoi_bounds": [
+    400000.0,
+    3600000.0,
+    500000.0,
+    3700000.0
+  ]
+}

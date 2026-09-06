@@ -1,0 +1,20 @@
+dataset/
+dataset_corrected_test/
+dataset_mac_backup/
+tiles/
+runs/
+checkpoints/
+figures/
+predictions/
+background_mining_pool/
+hard_negative_review/
+hard_negative_contact_sheets/
+selected_hard_negative_qc/
+replacement_hard_negative_qc/
+final_replacement_qc/
+last_two_hard_negative_qc/
+__pycache__/
+.ipynb_checkpoints/
+*.pt
+.DS_Store
+* 2.*
