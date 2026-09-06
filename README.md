@@ -4,4 +4,4 @@ Code and supporting outputs for my MSc Data Science research project on the auto
 
 The repository contains model development, evaluation, error analysis, and methodological validation scripts used in the project.
 
-The code uses local data uploads, some old local runs and has general issues that would prevent it from being ran without editing by another user. 
+The code uses local data uploads, some old local runs and other hardcoded logic that would prevent it from being ran without editing by another user. 
